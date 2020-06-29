@@ -1,0 +1,15 @@
+code_seg
+在写的Windows WDM驱动的时候发现一个问题：在函数前加code_seg("INIT")导致加载驱动时蓝屏
+具体是这样调用的：
+'''
+code_seg("INIT")
+NTSTATUS CreateDevice(...)
+{...}
+
+NTSTATUS DriverEntry(...)
+{
+...
+CreateDevice();
+...
+}
+'''

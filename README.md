@@ -1,4 +1,4 @@
 ### blog 
 Leave something
 
-[Home Page](https://index.html/)
+[Home Page](./index.html)

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>wonderful world</title>
+<script type="text/javascript">
+	
+	function english(){
+ 		
+ 		var str = document.getElementById("old").value;
+ 		var s = str.replace(/[\r\n]/g, " ");
+ 		document.getElementById("new").value = s;
+  	}
+  	function chinese(){
+ 		
+ 		var str = document.getElementById("old").value;
+ 		var s = str.replace(/[\s+\r\n]/g, "");
+ 		document.getElementById("new").value = s;
+  	}
+
+  	function clear_textarea(){
+  		document.getElementById("old").value="";
+  		document.getElementById("new").value=""; 
+  	}
+  	function helpWindow(){
+  		alert("有时候我们想从PDF里拷贝内容，不管英文还是中文都会出现很多换行，\n使用这个界面可以帮助您快速将格错乱的文字整理好！\n\n步骤如下：\n    1：在左边方框，单击右键==>粘贴\n    2：根据您的内容选择“中文”或者“英文”\n    3：在右边方框，全选内容==>右键==>复制\n\nTip:联网的时候才会有漂亮的界面哟!  ^_^\n     Ctrl+A:全选");
+  	}
+ 
+</script>
+
+<style type="text/css">
+	body{
+		text-align: center;
+		background:url("./rsc/background.jpeg") no-repeat;
+		background-repeat:no-repeat ;
+		background-size:100% 100%; 
+		background-attachment:fixed;
+	}
+	div{
+		display: inline;
+		margin: 0 auto;
+
+	}
+
+	textarea{
+		width: 400px;
+		height: 500px;
+		resize: none;
+		font-size: large;
+		filter:alpha(Opacity=100);-moz-opacity:0.6;opacity: 0.6;
+
+	}
+	input{
+		width: 80px;
+		height: 30px;
+		}
+
+</style>
+
+
+</head>
+
+<body>
+<span style="color: black;font-size: xx-large;">
+	文字排版
+</span>
+<br />
+<!-- <span style="color: red;font-size: larger;">
+	<span style="position: relative;right: 300px">排版前</span>
+	<span style="position: relative;left: 300px">排版后</span>
+</span> -->
+<br />
+<div>
+	<textarea id="old"></textarea>
+</div>
+<div>
+	<div style="position: relative;
+		top:-50px;"/>
+		<input type="button" value="中文" onclick="chinese()">
+		<input type="button" value="英文" onclick="english()">
+		<input type="button" value="清除" onclick="clear_textarea()">
+		<input type="button" value="帮助" onclick="helpWindow()">
+	</div>
+	
+</div>
+<div>
+	<textarea id="new" readonly="readonly"></textarea>
+</div>
+</body>
+
+</html>
